@@ -36,6 +36,7 @@
 namespace phpseclib\Net;
 
 
+
 /**
  * Pure-PHP implementations of SFTP.
  *
