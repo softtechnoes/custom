@@ -6,8 +6,8 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Crypt\Base;
-use phpseclib\Net\SFTP;
+use phpseclibcustom\Crypt\Base;
+use phpseclibcustom\Net\SFTP;
 
 class Functional_Net_SFTPLargeFileTest extends Functional_Net_SFTPTestCase
 {

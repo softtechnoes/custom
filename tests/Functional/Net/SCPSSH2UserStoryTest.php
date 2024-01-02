@@ -6,8 +6,8 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Net\SCP;
-use phpseclib\Net\SSH2;
+use phpseclibcustom\Net\SCP;
+use phpseclibcustom\Net\SSH2;
 
 class Functional_Net_SCPSSH2UserStoryTest extends PhpseclibFunctionalTestCase
 {
@@ -37,21 +37,21 @@ class Functional_Net_SCPSSH2UserStoryTest extends PhpseclibFunctionalTestCase
 
     /**
      * @depends testConstructSSH2
-     * @param \phpseclib\Net\SSH2 $ssh
+     * @param \phpseclibcustom\Net\SSH2 $ssh
      */
     public function testConstructor($ssh)
     {
         $scp = new SCP($ssh);
         $this->assertTrue(
             is_object($scp),
-            'Could not construct \phpseclib\Net\SCP object.'
+            'Could not construct \phpseclibcustom\Net\SCP object.'
         );
         return $scp;
     }
 
     /**
      * @depends testConstructor
-     * @param \phpseclib\Net\SCP $scp
+     * @param \phpseclibcustom\Net\SCP $scp
      */
     public function testPutGetString($scp)
     {
@@ -76,7 +76,7 @@ class Functional_Net_SCPSSH2UserStoryTest extends PhpseclibFunctionalTestCase
 
     /**
      * @depends testPutGetString
-     * @param \phpseclib\Net\SCP $scp
+     * @param \phpseclibcustom\Net\SCP $scp
      */
     public function testGetFile($scp)
     {

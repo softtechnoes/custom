@@ -30,7 +30,7 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $rijndael = new \phpseclib\Crypt\Rijndael();
+ *    $rijndael = new \phpseclibcustom\Crypt\Rijndael();
  *
  *    $rijndael->setKey('abcdefghijklmnop');
  *
@@ -52,7 +52,7 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Crypt;
+namespace phpseclibcustom\Crypt;
 
 /**
  * Pure-PHP implementation of Rijndael.
@@ -67,12 +67,12 @@ class Rijndael extends Base
      * The mcrypt specific name of the cipher
      *
      * Mcrypt is useable for 128/192/256-bit $block_size/$key_length. For 160/224 not.
-     * \phpseclib\Crypt\Rijndael determines automatically whether mcrypt is useable
+     * \phpseclibcustom\Crypt\Rijndael determines automatically whether mcrypt is useable
      * or not for the current $block_size/$key_length.
      * In case of, $cipher_name_mcrypt will be set dynamically at run time accordingly.
      *
-     * @see \phpseclib\Crypt\Base::cipher_name_mcrypt
-     * @see \phpseclib\Crypt\Base::engine
+     * @see \phpseclibcustom\Crypt\Base::cipher_name_mcrypt
+     * @see \phpseclibcustom\Crypt\Base::engine
      * @see self::isValidEngine()
      * @var string
      * @access private
@@ -82,8 +82,8 @@ class Rijndael extends Base
     /**
      * The default salt used by setPassword()
      *
-     * @see \phpseclib\Crypt\Base::password_default_salt
-     * @see \phpseclib\Crypt\Base::setPassword()
+     * @see \phpseclibcustom\Crypt\Base::password_default_salt
+     * @see \phpseclibcustom\Crypt\Base::setPassword()
      * @var string
      * @access private
      */
@@ -236,9 +236,9 @@ class Rijndael extends Base
     /**
      * Test for engine validity
      *
-     * This is mainly just a wrapper to set things up for \phpseclib\Crypt\Base::isValidEngine()
+     * This is mainly just a wrapper to set things up for \phpseclibcustom\Crypt\Base::isValidEngine()
      *
-     * @see \phpseclib\Crypt\Base::__construct()
+     * @see \phpseclibcustom\Crypt\Base::__construct()
      * @param int $engine
      * @access public
      * @return bool
@@ -458,7 +458,7 @@ class Rijndael extends Base
     /**
      * Setup the key (expansion)
      *
-     * @see \phpseclib\Crypt\Base::_setupKey()
+     * @see \phpseclibcustom\Crypt\Base::_setupKey()
      * @access private
      */
     function _setupKey()
@@ -768,7 +768,7 @@ class Rijndael extends Base
     /**
      * Setup the performance-optimized function for de/encrypt()
      *
-     * @see \phpseclib\Crypt\Base::_setupInlineCrypt()
+     * @see \phpseclibcustom\Crypt\Base::_setupInlineCrypt()
      * @access private
      */
     function _setupInlineCrypt()

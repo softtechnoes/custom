@@ -24,13 +24,13 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\File;
+namespace phpseclibcustom\File;
 
-use phpseclib\Crypt\Hash;
-use phpseclib\Crypt\Random;
-use phpseclib\Crypt\RSA;
-use phpseclib\File\ASN1\Element;
-use phpseclib\Math\BigInteger;
+use phpseclibcustom\Crypt\Hash;
+use phpseclibcustom\Crypt\Random;
+use phpseclibcustom\Crypt\RSA;
+use phpseclibcustom\File\ASN1\Element;
+use phpseclibcustom\Math\BigInteger;
 use DateTime;
 use DateTimeZone;
 
@@ -54,7 +54,7 @@ class X509
 
     /**#@+
      * @access public
-     * @see \phpseclib\File\X509::getDN()
+     * @see \phpseclibcustom\File\X509::getDN()
     */
     /**
      * Return internal array representation
@@ -84,9 +84,9 @@ class X509
 
     /**#@+
      * @access public
-     * @see \phpseclib\File\X509::saveX509()
-     * @see \phpseclib\File\X509::saveCSR()
-     * @see \phpseclib\File\X509::saveCRL()
+     * @see \phpseclibcustom\File\X509::saveX509()
+     * @see \phpseclibcustom\File\X509::saveCSR()
+     * @see \phpseclibcustom\File\X509::saveCRL()
     */
     /**
      * Save as PEM
@@ -247,7 +247,7 @@ class X509
     /**
      * The signature subject
      *
-     * There's no guarantee \phpseclib\File\X509 is going to re-encode an X.509 cert in the same way it was originally
+     * There's no guarantee \phpseclibcustom\File\X509 is going to re-encode an X.509 cert in the same way it was originally
      * encoded so we take save the portion of the original cert that the signature would have made for.
      *
      * @var string
@@ -325,7 +325,7 @@ class X509
     /**
      * Default Constructor.
      *
-     * @return \phpseclib\File\X509
+     * @return \phpseclibcustom\File\X509
      * @access public
      */
     function __construct()
@@ -604,8 +604,8 @@ class X509
 
         $AdministrationDomainName = array(
             'type'     => ASN1::TYPE_CHOICE,
-            // if class isn't present it's assumed to be \phpseclib\File\ASN1::CLASS_UNIVERSAL or
-            // (if constant is present) \phpseclib\File\ASN1::CLASS_CONTEXT_SPECIFIC
+            // if class isn't present it's assumed to be \phpseclibcustom\File\ASN1::CLASS_UNIVERSAL or
+            // (if constant is present) \phpseclibcustom\File\ASN1::CLASS_CONTEXT_SPECIFIC
             'class'    => ASN1::CLASS_APPLICATION,
             'cast'     => 2,
             'children' => array(
@@ -616,8 +616,8 @@ class X509
 
         $CountryName = array(
             'type'     => ASN1::TYPE_CHOICE,
-            // if class isn't present it's assumed to be \phpseclib\File\ASN1::CLASS_UNIVERSAL or
-            // (if constant is present) \phpseclib\File\ASN1::CLASS_CONTEXT_SPECIFIC
+            // if class isn't present it's assumed to be \phpseclibcustom\File\ASN1::CLASS_UNIVERSAL or
+            // (if constant is present) \phpseclibcustom\File\ASN1::CLASS_CONTEXT_SPECIFIC
             'class'    => ASN1::CLASS_APPLICATION,
             'cast'     => 1,
             'children' => array(
@@ -739,7 +739,7 @@ class X509
                                     'optional' => true,
                                     'implicit' => true
                                 ) + $this->DirectoryString,
-                 // partyName is technically required but \phpseclib\File\ASN1 doesn't currently support non-optional constants and
+                 // partyName is technically required but \phpseclibcustom\File\ASN1 doesn't currently support non-optional constants and
                  // setting it to optional gets the job done in any event.
                  'partyName'    => array(
                                     'constant' => 1,
@@ -1585,8 +1585,8 @@ class X509
         $filters['distributionPoint']['fullName']['directoryName']['rdnSequence']['value'] = $type_utf8_string;
         $filters['directoryName']['rdnSequence']['value'] = $type_utf8_string;
 
-        /* in the case of policyQualifiers/qualifier, the type has to be \phpseclib\File\ASN1::TYPE_IA5_STRING.
-           \phpseclib\File\ASN1::TYPE_PRINTABLE_STRING will cause OpenSSL's X.509 parser to spit out random
+        /* in the case of policyQualifiers/qualifier, the type has to be \phpseclibcustom\File\ASN1::TYPE_IA5_STRING.
+           \phpseclibcustom\File\ASN1::TYPE_PRINTABLE_STRING will cause OpenSSL's X.509 parser to spit out random
            characters.
          */
         $filters['policyQualifiers']['qualifier']
@@ -1696,8 +1696,8 @@ class X509
                                 $map = $this->_getMapping($subid);
                                 $subvalue = &$value[$j]['policyQualifiers'][$k]['qualifier'];
                                 if ($map !== false) {
-                                    // by default \phpseclib\File\ASN1 will try to render qualifier as a \phpseclib\File\ASN1::TYPE_IA5_STRING since it's
-                                    // actual type is \phpseclib\File\ASN1::TYPE_ANY
+                                    // by default \phpseclibcustom\File\ASN1 will try to render qualifier as a \phpseclibcustom\File\ASN1::TYPE_IA5_STRING since it's
+                                    // actual type is \phpseclibcustom\File\ASN1::TYPE_ANY
                                     $subvalue = new Element($asn1->encodeDER($subvalue, $map));
                                 }
                             }
@@ -1883,7 +1883,7 @@ class X509
      */
     function _getMapping($extnId)
     {
-        if (!is_string($extnId)) { // eg. if it's a \phpseclib\File\ASN1\Element object
+        if (!is_string($extnId)) { // eg. if it's a \phpseclibcustom\File\ASN1\Element object
             return true;
         }
 
@@ -3136,7 +3136,7 @@ class X509
     /**
      * Set public key
      *
-     * Key needs to be a \phpseclib\Crypt\RSA object
+     * Key needs to be a \phpseclibcustom\Crypt\RSA object
      *
      * @param object $key
      * @access public
@@ -3151,7 +3151,7 @@ class X509
     /**
      * Set private key
      *
-     * Key needs to be a \phpseclib\Crypt\RSA object
+     * Key needs to be a \phpseclibcustom\Crypt\RSA object
      *
      * @param object $key
      * @access public
@@ -3177,7 +3177,7 @@ class X509
     /**
      * Gets the public key
      *
-     * Returns a \phpseclib\Crypt\RSA object or a false.
+     * Returns a \phpseclibcustom\Crypt\RSA object or a false.
      *
      * @access public
      * @return mixed
@@ -3628,8 +3628,8 @@ class X509
      * $subject can be either an existing X.509 cert (if you want to resign it),
      * a CSR or something with the DN and public key explicitly set.
      *
-     * @param \phpseclib\File\X509 $issuer
-     * @param \phpseclib\File\X509 $subject
+     * @param \phpseclibcustom\File\X509 $issuer
+     * @param \phpseclibcustom\File\X509 $subject
      * @param string $signatureAlgorithm optional
      * @access public
      * @return mixed
@@ -3746,7 +3746,7 @@ class X509
         $altName = array();
 
         if (isset($subject->domains) && count($subject->domains)) {
-            $altName = array_map(array('\phpseclib\File\X509', '_dnsName'), $subject->domains);
+            $altName = array_map(array('\phpseclibcustom\File\X509', '_dnsName'), $subject->domains);
         }
 
         if (isset($subject->ipAddresses) && count($subject->ipAddresses)) {
@@ -3796,7 +3796,7 @@ class X509
         }
 
         // resync $this->signatureSubject
-        // save $tbsCertificate in case there are any \phpseclib\File\ASN1\Element objects in it
+        // save $tbsCertificate in case there are any \phpseclibcustom\File\ASN1\Element objects in it
         $tbsCertificate = $this->currentCert['tbsCertificate'];
         $this->loadX509($this->saveX509($this->currentCert));
 
@@ -3854,7 +3854,7 @@ class X509
         }
 
         // resync $this->signatureSubject
-        // save $certificationRequestInfo in case there are any \phpseclib\File\ASN1\Element objects in it
+        // save $certificationRequestInfo in case there are any \phpseclibcustom\File\ASN1\Element objects in it
         $certificationRequestInfo = $this->currentCert['certificationRequestInfo'];
         $this->loadCSR($this->saveCSR($this->currentCert));
 
@@ -3919,7 +3919,7 @@ class X509
         }
 
         // resync $this->signatureSubject
-        // save $publicKeyAndChallenge in case there are any \phpseclib\File\ASN1\Element objects in it
+        // save $publicKeyAndChallenge in case there are any \phpseclibcustom\File\ASN1\Element objects in it
         $publicKeyAndChallenge = $this->currentCert['publicKeyAndChallenge'];
         $this->loadSPKAC($this->saveSPKAC($this->currentCert));
 
@@ -3937,8 +3937,8 @@ class X509
      *
      * $issuer's private key needs to be loaded.
      *
-     * @param \phpseclib\File\X509 $issuer
-     * @param \phpseclib\File\X509 $crl
+     * @param \phpseclibcustom\File\X509 $issuer
+     * @param \phpseclibcustom\File\X509 $crl
      * @param string $signatureAlgorithm optional
      * @access public
      * @return mixed
@@ -4052,7 +4052,7 @@ class X509
         unset($tbsCertList);
 
         // resync $this->signatureSubject
-        // save $tbsCertList in case there are any \phpseclib\File\ASN1\Element objects in it
+        // save $tbsCertList in case there are any \phpseclibcustom\File\ASN1\Element objects in it
         $tbsCertList = $this->currentCert['tbsCertList'];
         $this->loadCRL($this->saveCRL($this->currentCert));
 
@@ -4068,7 +4068,7 @@ class X509
     /**
      * X.509 certificate signing helper function.
      *
-     * @param \phpseclib\File\X509 $key
+     * @param \phpseclibcustom\File\X509 $key
      * @param string $signatureAlgorithm
      * @access public
      * @return mixed
@@ -4690,9 +4690,9 @@ class X509
      * recommended methods (4.2.1.2 RFC 3280).
      * Highly polymorphic: try to accept all possible forms of key:
      * - Key object
-     * - \phpseclib\File\X509 object with public or private key defined
+     * - \phpseclibcustom\File\X509 object with public or private key defined
      * - Certificate or CSR array
-     * - \phpseclib\File\ASN1\Element object
+     * - \phpseclibcustom\File\ASN1\Element object
      * - PEM or DER string
      *
      * @param mixed $key optional
@@ -4748,7 +4748,7 @@ class X509
                     return $this->computeKeyIdentifier($key->currentCert, $method);
                 }
                 return false;
-            default: // Should be a key object (i.e.: \phpseclib\Crypt\RSA).
+            default: // Should be a key object (i.e.: \phpseclibcustom\Crypt\RSA).
                 $key = $key->getPublicKey(RSA::PUBLIC_FORMAT_PKCS1);
                 break;
         }

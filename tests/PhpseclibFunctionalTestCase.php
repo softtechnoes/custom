@@ -5,8 +5,8 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Crypt\Hash;
-use phpseclib\Math\BigInteger;
+use phpseclibcustom\Crypt\Hash;
+use phpseclibcustom\Math\BigInteger;
 
 abstract class PhpseclibFunctionalTestCase extends PhpseclibTestCase
 {

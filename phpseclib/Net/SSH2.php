@@ -10,7 +10,7 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $ssh = new \phpseclib\Net\SSH2('www.domain.tld');
+ *    $ssh = new \phpseclibcustom\Net\SSH2('www.domain.tld');
  *    if (!$ssh->login('username', 'password')) {
  *        exit('Login Failed');
  *    }
@@ -24,11 +24,11 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $key = new \phpseclib\Crypt\RSA();
+ *    $key = new \phpseclibcustom\Crypt\RSA();
  *    //$key->setPassword('whatever');
  *    $key->loadKey(file_get_contents('privatekey'));
  *
- *    $ssh = new \phpseclib\Net\SSH2('www.domain.tld');
+ *    $ssh = new \phpseclibcustom\Net\SSH2('www.domain.tld');
  *    if (!$ssh->login('username', $key)) {
  *        exit('Login Failed');
  *    }
@@ -47,19 +47,19 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Net;
+namespace phpseclibcustom\Net;
 
-use phpseclib\Crypt\Base;
-use phpseclib\Crypt\Blowfish;
-use phpseclib\Crypt\Hash;
-use phpseclib\Crypt\Random;
-use phpseclib\Crypt\RC4;
-use phpseclib\Crypt\Rijndael;
-use phpseclib\Crypt\RSA;
-use phpseclib\Crypt\TripleDES;
-use phpseclib\Crypt\Twofish;
-use phpseclib\Math\BigInteger; // Used to do Diffie-Hellman key exchange and DSA/RSA signature verification.
-use phpseclib\System\SSH\Agent;
+use phpseclibcustom\Crypt\Base;
+use phpseclibcustom\Crypt\Blowfish;
+use phpseclibcustom\Crypt\Hash;
+use phpseclibcustom\Crypt\Random;
+use phpseclibcustom\Crypt\RC4;
+use phpseclibcustom\Crypt\Rijndael;
+use phpseclibcustom\Crypt\RSA;
+use phpseclibcustom\Crypt\TripleDES;
+use phpseclibcustom\Crypt\Twofish;
+use phpseclibcustom\Math\BigInteger; // Used to do Diffie-Hellman key exchange and DSA/RSA signature verification.
+use phpseclibcustom\System\SSH\Agent;
 
 /**
  * Pure-PHP implementation of SSHv2.
@@ -92,7 +92,7 @@ class SSH2
     /**#@+
      * Execution Bitmap Masks
      *
-     * @see \phpseclib\Net\SSH2::bitmap
+     * @see \phpseclibcustom\Net\SSH2::bitmap
      * @access private
      */
     const MASK_CONSTRUCTOR   = 0x00000001;
@@ -115,8 +115,8 @@ class SSH2
      *     open request, and 'sender channel' is the channel number allocated by
      *     the other side.
      *
-     * @see \phpseclib\Net\SSH2::_send_channel_packet()
-     * @see \phpseclib\Net\SSH2::_get_channel_packet()
+     * @see \phpseclibcustom\Net\SSH2::_send_channel_packet()
+     * @see \phpseclibcustom\Net\SSH2::_get_channel_packet()
      * @access private
     */
     const CHANNEL_EXEC          = 1; // PuTTy uses 0x100
@@ -128,7 +128,7 @@ class SSH2
 
     /**#@+
      * @access public
-     * @see \phpseclib\Net\SSH2::getLog()
+     * @see \phpseclibcustom\Net\SSH2::getLog()
     */
     /**
      * Returns the message numbers
@@ -154,7 +154,7 @@ class SSH2
 
     /**#@+
      * @access public
-     * @see \phpseclib\Net\SSH2::read()
+     * @see \phpseclibcustom\Net\SSH2::read()
     */
     /**
      * Returns when a string matching $expect exactly is found
@@ -1105,7 +1105,7 @@ class SSH2
      * @param int $port
      * @param int $timeout
      * @see self::login()
-     * @return \phpseclib\Net\SSH2
+     * @return \phpseclibcustom\Net\SSH2
      * @access public
      */
     function __construct($host, $port = 22, $timeout = 10)
@@ -2191,10 +2191,10 @@ class SSH2
 
     /**
      * Maps an encryption algorithm name to an instance of a subclass of
-     * \phpseclib\Crypt\Base.
+     * \phpseclibcustom\Crypt\Base.
      *
      * @param string $algorithm Name of the encryption algorithm
-     * @return mixed Instance of \phpseclib\Crypt\Base or null for unknown
+     * @return mixed Instance of \phpseclibcustom\Crypt\Base or null for unknown
      * @access private
      */
     function _encryption_algorithm_to_crypt_instance($algorithm)
@@ -2257,7 +2257,7 @@ class SSH2
     /**
      * Login
      *
-     * The $password parameter can be a plaintext password, a \phpseclib\Crypt\RSA object or an array
+     * The $password parameter can be a plaintext password, a \phpseclibcustom\Crypt\RSA object or an array
      *
      * @param string $username
      * @return bool
@@ -2726,7 +2726,7 @@ class SSH2
      * Login with an ssh-agent provided key
      *
      * @param string $username
-     * @param \phpseclib\System\SSH\Agent $agent
+     * @param \phpseclibcustom\System\SSH\Agent $agent
      * @return bool
      * @access private
      */
@@ -2747,7 +2747,7 @@ class SSH2
      * Login with an RSA private key
      *
      * @param string $username
-     * @param \phpseclib\Crypt\RSA $privatekey
+     * @param \phpseclibcustom\Crypt\RSA $privatekey
      * @return bool
      * @access private
      * @internal It might be worthwhile, at some point, to protect against {@link http://tools.ietf.org/html/rfc4251#section-9.3.9 traffic analysis}
@@ -2940,7 +2940,7 @@ class SSH2
     /**
      * Execute Command
      *
-     * If $callback is set to false then \phpseclib\Net\SSH2::_get_channel_packet(self::CHANNEL_EXEC) will need to be called manually.
+     * If $callback is set to false then \phpseclibcustom\Net\SSH2::_get_channel_packet(self::CHANNEL_EXEC) will need to be called manually.
      * In all likelihood, this is not a feature you want to be taking advantage of.
      *
      * @param string $command
@@ -3026,7 +3026,7 @@ class SSH2
         }
 
         // sending a pty-req SSH_MSG_CHANNEL_REQUEST message is unnecessary and, in fact, in most cases, slows things
-        // down.  the one place where it might be desirable is if you're doing something like \phpseclib\Net\SSH2::exec('ping localhost &').
+        // down.  the one place where it might be desirable is if you're doing something like \phpseclibcustom\Net\SSH2::exec('ping localhost &').
         // with a pty-req SSH_MSG_CHANNEL_REQUEST, exec() will return immediately and the ping process will then
         // then immediately terminate.  without such a request exec() will loop indefinitely.  the ping process won't end but
         // neither will your script.
@@ -4432,7 +4432,7 @@ class SSH2
     /**
      * Closes and flushes a channel
      *
-     * \phpseclib\Net\SSH2 doesn't properly close most channels.  For exec() channels are normally closed by the server
+     * \phpseclibcustom\Net\SSH2 doesn't properly close most channels.  For exec() channels are normally closed by the server
      * and for SFTP channels are presumably closed when the client disconnects.  This functions is intended
      * for SCP more than anything.
      *

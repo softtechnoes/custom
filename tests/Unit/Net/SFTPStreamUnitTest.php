@@ -5,7 +5,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Net\SFTP\Stream;
+use phpseclibcustom\Net\SFTP\Stream;
 
 class Unit_Net_SFTPStreamUnitTest extends PhpseclibTestCase
 {

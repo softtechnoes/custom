@@ -5,10 +5,10 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\File\ASN1;
-use phpseclib\File\ASN1\Element;
-use phpseclib\File\X509;
-use phpseclib\Crypt\RSA;
+use phpseclibcustom\File\ASN1;
+use phpseclibcustom\File\ASN1\Element;
+use phpseclibcustom\File\X509;
+use phpseclibcustom\Crypt\RSA;
 
 class Unit_File_X509_X509Test extends PhpseclibTestCase
 {

@@ -5,9 +5,9 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Crypt\Base;
-use phpseclib\Crypt\RC4;
-use phpseclib\Crypt\Random;
+use phpseclibcustom\Crypt\Base;
+use phpseclibcustom\Crypt\RC4;
+use phpseclibcustom\Crypt\Random;
 
 class Unit_Crypt_RC4Test extends PhpseclibTestCase
 {

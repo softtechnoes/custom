@@ -5,7 +5,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Crypt\Hash;
+use phpseclibcustom\Crypt\Hash;
 
 abstract class Unit_Crypt_Hash_TestCase extends PhpseclibTestCase
 {
@@ -20,7 +20,7 @@ abstract class Unit_Crypt_Hash_TestCase extends PhpseclibTestCase
     {
         if (defined('CRYPT_HASH_MODE') && CRYPT_HASH_MODE !== Hash::MODE_INTERNAL) {
             $this->markTestSkipped(
-                'Skipping test because CRYPT_HASH_MODE is not defined as \phpseclib\Crypt\Hash::MODE_INTERNAL.'
+                'Skipping test because CRYPT_HASH_MODE is not defined as \phpseclibcustom\Crypt\Hash::MODE_INTERNAL.'
             );
         }
     }

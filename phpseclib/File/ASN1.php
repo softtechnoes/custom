@@ -9,7 +9,7 @@
  * utilized scheme is DER or the "Distinguished Encoding Rules".  PEM's are base64 encoded
  * DER blobs.
  *
- * \phpseclib\File\ASN1 decodes and encodes DER formatted messages and places them in a semantic context.
+ * \phpseclibcustom\File\ASN1 decodes and encodes DER formatted messages and places them in a semantic context.
  *
  * Uses the 1988 ASN.1 syntax.
  *
@@ -21,10 +21,10 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\File;
+namespace phpseclibcustom\File;
 
-use phpseclib\File\ASN1\Element;
-use phpseclib\Math\BigInteger;
+use phpseclibcustom\File\ASN1\Element;
+use phpseclibcustom\Math\BigInteger;
 use DateTime;
 use DateTimeZone;
 
@@ -156,7 +156,7 @@ class ASN1
     /**
      * Type mapping table for the ANY type.
      *
-     * Structured or unknown types are mapped to a \phpseclib\File\ASN1\Element.
+     * Structured or unknown types are mapped to a \phpseclibcustom\File\ASN1\Element.
      * Unambiguous types get the direct mapping (int/real/bool).
      * Others are mapped as a choice, with an extra indexing level.
      *
@@ -1341,7 +1341,7 @@ class ASN1
     /**
      * Load filters
      *
-     * See \phpseclib\File\X509, etc, for an example.
+     * See \phpseclibcustom\File\X509, etc, for an example.
      *
      * @access public
      * @param array $filters

@@ -20,7 +20,7 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $rc4 = new \phpseclib\Crypt\RC4();
+ *    $rc4 = new \phpseclibcustom\Crypt\RC4();
  *
  *    $rc4->setKey('abcdefgh');
  *
@@ -42,7 +42,7 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Crypt;
+namespace phpseclibcustom\Crypt;
 
 /**
  * Pure-PHP implementation of RC4.
@@ -55,7 +55,7 @@ class RC4 extends Base
 {
     /**#@+
      * @access private
-     * @see \phpseclib\Crypt\RC4::_crypt()
+     * @see \phpseclibcustom\Crypt\RC4::_crypt()
     */
     const ENCRYPT = 0;
     const DECRYPT = 1;
@@ -67,7 +67,7 @@ class RC4 extends Base
      * RC4 is a stream cipher
      * so we the block_size to 0
      *
-     * @see \phpseclib\Crypt\Base::block_size
+     * @see \phpseclibcustom\Crypt\Base::block_size
      * @var int
      * @access private
      */
@@ -76,7 +76,7 @@ class RC4 extends Base
     /**
      * Key Length (in bytes)
      *
-     * @see \phpseclib\Crypt\RC4::setKeyLength()
+     * @see \phpseclibcustom\Crypt\RC4::setKeyLength()
      * @var int
      * @access private
      */
@@ -85,7 +85,7 @@ class RC4 extends Base
     /**
      * The mcrypt specific name of the cipher
      *
-     * @see \phpseclib\Crypt\Base::cipher_name_mcrypt
+     * @see \phpseclibcustom\Crypt\Base::cipher_name_mcrypt
      * @var string
      * @access private
      */
@@ -94,7 +94,7 @@ class RC4 extends Base
     /**
      * Holds whether performance-optimized $inline_crypt() can/should be used.
      *
-     * @see \phpseclib\Crypt\Base::inline_crypt
+     * @see \phpseclibcustom\Crypt\Base::inline_crypt
      * @var mixed
      * @access private
      */
@@ -123,8 +123,8 @@ class RC4 extends Base
      *
      * Determines whether or not the mcrypt extension should be used.
      *
-     * @see \phpseclib\Crypt\Base::__construct()
-     * @return \phpseclib\Crypt\RC4
+     * @see \phpseclibcustom\Crypt\Base::__construct()
+     * @return \phpseclibcustom\Crypt\RC4
      * @access public
      */
     function __construct()
@@ -135,9 +135,9 @@ class RC4 extends Base
     /**
      * Test for engine validity
      *
-     * This is mainly just a wrapper to set things up for \phpseclib\Crypt\Base::isValidEngine()
+     * This is mainly just a wrapper to set things up for \phpseclibcustom\Crypt\Base::isValidEngine()
      *
-     * @see \phpseclib\Crypt\Base::__construct()
+     * @see \phpseclibcustom\Crypt\Base::__construct()
      * @param int $engine
      * @access public
      * @return bool
@@ -220,7 +220,7 @@ class RC4 extends Base
     /**
      * Encrypts a message.
      *
-     * @see \phpseclib\Crypt\Base::decrypt()
+     * @see \phpseclibcustom\Crypt\Base::decrypt()
      * @see self::_crypt()
      * @access public
      * @param string $plaintext
@@ -240,7 +240,7 @@ class RC4 extends Base
      * $this->decrypt($this->encrypt($plaintext)) == $this->encrypt($this->encrypt($plaintext)).
      * At least if the continuous buffer is disabled.
      *
-     * @see \phpseclib\Crypt\Base::encrypt()
+     * @see \phpseclibcustom\Crypt\Base::encrypt()
      * @see self::_crypt()
      * @access public
      * @param string $ciphertext
@@ -279,7 +279,7 @@ class RC4 extends Base
     /**
      * Setup the key (expansion)
      *
-     * @see \phpseclib\Crypt\Base::_setupKey()
+     * @see \phpseclibcustom\Crypt\Base::_setupKey()
      * @access private
      */
     function _setupKey()

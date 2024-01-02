@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Base Class for all \phpseclib\Crypt\* cipher classes
+ * Base Class for all \phpseclibcustom\Crypt\* cipher classes
  *
  * PHP version 5
  *
  * Internally for phpseclib developers:
  *  If you plan to add a new cipher class, please note following rules:
  *
- *  - The new \phpseclib\Crypt\* cipher class should extend \phpseclib\Crypt\Base
+ *  - The new \phpseclibcustom\Crypt\* cipher class should extend \phpseclibcustom\Crypt\Base
  *
  *  - Following methods are then required to be overridden/overloaded:
  *
@@ -20,7 +20,7 @@
  *
  *  - All other methods are optional to be overridden/overloaded
  *
- *  - Look at the source code of the current ciphers how they extend \phpseclib\Crypt\Base
+ *  - Look at the source code of the current ciphers how they extend \phpseclibcustom\Crypt\Base
  *    and take one of them as a start up for the new cipher class.
  *
  *  - Please read all the other comments/notes/hints here also for each class var/method
@@ -34,10 +34,10 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Crypt;
+namespace phpseclibcustom\Crypt;
 
 /**
- * Base Class for all \phpseclib\Crypt\* cipher classes
+ * Base Class for all \phpseclibcustom\Crypt\* cipher classes
  *
  * @package Base
  * @author  Jim Wigginton <terrafrost@php.net>
@@ -47,8 +47,8 @@ abstract class Base
 {
     /**#@+
      * @access public
-     * @see \phpseclib\Crypt\Base::encrypt()
-     * @see \phpseclib\Crypt\Base::decrypt()
+     * @see \phpseclibcustom\Crypt\Base::encrypt()
+     * @see \phpseclibcustom\Crypt\Base::decrypt()
      */
     /**
      * Encrypt / decrypt using the Counter mode.
@@ -99,7 +99,7 @@ abstract class Base
     /**
      * Whirlpool available flag
      *
-     * @see \phpseclib\Crypt\Base::_hashInlineCryptFunction()
+     * @see \phpseclibcustom\Crypt\Base::_hashInlineCryptFunction()
      * @var bool
      * @access private
      */
@@ -107,7 +107,7 @@ abstract class Base
 
     /**#@+
      * @access private
-     * @see \phpseclib\Crypt\Base::__construct()
+     * @see \phpseclibcustom\Crypt\Base::__construct()
      */
     /**
      * Base value for the internal implementation $engine switch
@@ -234,8 +234,8 @@ abstract class Base
     /**
      * Does the enmcrypt resource need to be (re)initialized?
      *
-     * @see \phpseclib\Crypt\Twofish::setKey()
-     * @see \phpseclib\Crypt\Twofish::setIV()
+     * @see \phpseclibcustom\Crypt\Twofish::setKey()
+     * @see \phpseclibcustom\Crypt\Twofish::setIV()
      * @var bool
      * @access private
      */
@@ -244,8 +244,8 @@ abstract class Base
     /**
      * Does the demcrypt resource need to be (re)initialized?
      *
-     * @see \phpseclib\Crypt\Twofish::setKey()
-     * @see \phpseclib\Crypt\Twofish::setIV()
+     * @see \phpseclibcustom\Crypt\Twofish::setKey()
+     * @see \phpseclibcustom\Crypt\Twofish::setIV()
      * @var bool
      * @access private
      */
@@ -543,7 +543,7 @@ abstract class Base
     /**
      * Sets the initialization vector. (optional)
      *
-     * SetIV is not required when self::MODE_ECB (or ie for AES: \phpseclib\Crypt\AES::MODE_ECB) is being used.  If not explicitly set, it'll be assumed
+     * SetIV is not required when self::MODE_ECB (or ie for AES: \phpseclibcustom\Crypt\AES::MODE_ECB) is being used.  If not explicitly set, it'll be assumed
      * to be all zero's.
      *
      * @access public
@@ -1701,7 +1701,7 @@ abstract class Base
      * outputs.  The reason is due to the fact that the initialization vector's change after every encryption /
      * decryption round when the continuous buffer is enabled.  When it's disabled, they remain constant.
      *
-     * Put another way, when the continuous buffer is enabled, the state of the \phpseclib\Crypt\*() object changes after each
+     * Put another way, when the continuous buffer is enabled, the state of the \phpseclibcustom\Crypt\*() object changes after each
      * encryption / decryption round, whereas otherwise, it'd remain constant.  For this reason, it's recommended that
      * continuous buffers not be used.  They do offer better security and are, in fact, sometimes required (SSH uses them),
      * however, they are also less intuitive and more likely to cause you problems.
@@ -1810,11 +1810,11 @@ abstract class Base
      *
      * Currently, $engine could be:
      *
-     * - \phpseclib\Crypt\Base::ENGINE_OPENSSL  [very fast]
+     * - \phpseclibcustom\Crypt\Base::ENGINE_OPENSSL  [very fast]
      *
-     * - \phpseclib\Crypt\Base::ENGINE_MCRYPT   [fast]
+     * - \phpseclibcustom\Crypt\Base::ENGINE_MCRYPT   [fast]
      *
-     * - \phpseclib\Crypt\Base::ENGINE_INTERNAL [slow]
+     * - \phpseclibcustom\Crypt\Base::ENGINE_INTERNAL [slow]
      *
      * If the preferred crypt engine is not available the fastest available one will be used
      *
@@ -1895,7 +1895,7 @@ abstract class Base
     /**
      * Encrypts a block
      *
-     * Note: Must be extended by the child \phpseclib\Crypt\* class
+     * Note: Must be extended by the child \phpseclibcustom\Crypt\* class
      *
      * @access private
      * @param string $in
@@ -1906,7 +1906,7 @@ abstract class Base
     /**
      * Decrypts a block
      *
-     * Note: Must be extended by the child \phpseclib\Crypt\* class
+     * Note: Must be extended by the child \phpseclibcustom\Crypt\* class
      *
      * @access private
      * @param string $in
@@ -1919,7 +1919,7 @@ abstract class Base
      *
      * Only used if $engine == self::ENGINE_INTERNAL
      *
-     * Note: Must extend by the child \phpseclib\Crypt\* class
+     * Note: Must extend by the child \phpseclibcustom\Crypt\* class
      *
      * @see self::_setup()
      * @access private
@@ -2221,7 +2221,7 @@ abstract class Base
      *       - short (as good as possible)
      *
      * Note: - _setupInlineCrypt() is using _createInlineCryptFunction() to create the full callback function code.
-     *       - In case of using inline crypting, _setupInlineCrypt() must extend by the child \phpseclib\Crypt\* class.
+     *       - In case of using inline crypting, _setupInlineCrypt() must extend by the child \phpseclibcustom\Crypt\* class.
      *       - The following variable names are reserved:
      *         - $_*  (all variable names prefixed with an underscore)
      *         - $self (object reference to it self. Do not use $this, but $self instead)
@@ -2238,9 +2238,9 @@ abstract class Base
      */
     function _setupInlineCrypt()
     {
-        // If, for any reason, an extending \phpseclib\Crypt\Base() \phpseclib\Crypt\* class
+        // If, for any reason, an extending \phpseclibcustom\Crypt\Base() \phpseclibcustom\Crypt\* class
         // not using inline crypting then it must be ensured that: $this->use_inline_crypt = false
-        // ie in the class var declaration of $use_inline_crypt in general for the \phpseclib\Crypt\* class,
+        // ie in the class var declaration of $use_inline_crypt in general for the \phpseclibcustom\Crypt\* class,
         // in the constructor at object instance-time
         // or, if it's runtime-specific, at runtime
 
@@ -2337,7 +2337,7 @@ abstract class Base
      *    +----------------------------------------------------------------------------------------------+
      *    </code>
      *
-     *    See also the \phpseclib\Crypt\*::_setupInlineCrypt()'s for
+     *    See also the \phpseclibcustom\Crypt\*::_setupInlineCrypt()'s for
      *    productive inline $cipher_code's how they works.
      *
      *    Structure of:

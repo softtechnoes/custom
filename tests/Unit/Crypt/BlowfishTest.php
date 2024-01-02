@@ -5,9 +5,9 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Crypt\Base;
-use phpseclib\Crypt\Blowfish;
-use phpseclib\Crypt\Random;
+use phpseclibcustom\Crypt\Base;
+use phpseclibcustom\Crypt\Blowfish;
+use phpseclibcustom\Crypt\Random;
 
 class Unit_Crypt_BlowfishTest extends PhpseclibTestCase
 {

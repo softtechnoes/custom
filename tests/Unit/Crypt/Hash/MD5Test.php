@@ -5,7 +5,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Crypt\Hash;
+use phpseclibcustom\Crypt\Hash;
 
 class Unit_Crypt_Hash_MD5Test extends Unit_Crypt_Hash_TestCase
 {

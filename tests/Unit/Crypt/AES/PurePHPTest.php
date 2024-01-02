@@ -5,7 +5,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Crypt\Base;
+use phpseclibcustom\Crypt\Base;
 
 class Unit_Crypt_AES_PurePHPTest extends Unit_Crypt_AES_TestCase
 {

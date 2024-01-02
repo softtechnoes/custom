@@ -16,7 +16,7 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $twofish = new \phpseclib\Crypt\Twofish();
+ *    $twofish = new \phpseclibcustom\Crypt\Twofish();
  *
  *    $twofish->setKey('12345678901234567890123456789012');
  *
@@ -35,7 +35,7 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Crypt;
+namespace phpseclibcustom\Crypt;
 
 /**
  * Pure-PHP implementation of Twofish.
@@ -50,7 +50,7 @@ class Twofish extends Base
     /**
      * The mcrypt specific name of the cipher
      *
-     * @see \phpseclib\Crypt\Base::cipher_name_mcrypt
+     * @see \phpseclibcustom\Crypt\Base::cipher_name_mcrypt
      * @var string
      * @access private
      */
@@ -59,7 +59,7 @@ class Twofish extends Base
     /**
      * Optimizing value while CFB-encrypting
      *
-     * @see \phpseclib\Crypt\Base::cfb_init_len
+     * @see \phpseclibcustom\Crypt\Base::cfb_init_len
      * @var int
      * @access private
      */
@@ -431,7 +431,7 @@ class Twofish extends Base
     /**
      * Setup the key (expansion)
      *
-     * @see \phpseclib\Crypt\Base::_setupKey()
+     * @see \phpseclibcustom\Crypt\Base::_setupKey()
      * @access private
      */
     function _setupKey()
@@ -704,7 +704,7 @@ class Twofish extends Base
     /**
      * Setup the performance-optimized function for de/encrypt()
      *
-     * @see \phpseclib\Crypt\Base::_setupInlineCrypt()
+     * @see \phpseclibcustom\Crypt\Base::_setupInlineCrypt()
      * @access private
      */
     function _setupInlineCrypt()

@@ -18,7 +18,7 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $des = new \phpseclib\Crypt\DES();
+ *    $des = new \phpseclibcustom\Crypt\DES();
  *
  *    $des->setKey('abcdefgh');
  *
@@ -40,7 +40,7 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Crypt;
+namespace phpseclibcustom\Crypt;
 
 /**
  * Pure-PHP implementation of DES.
@@ -53,8 +53,8 @@ class DES extends Base
 {
     /**#@+
      * @access private
-     * @see \phpseclib\Crypt\DES::_setupKey()
-     * @see \phpseclib\Crypt\DES::_processBlock()
+     * @see \phpseclibcustom\Crypt\DES::_setupKey()
+     * @see \phpseclibcustom\Crypt\DES::_processBlock()
      */
     /**
      * Contains $keys[self::ENCRYPT]
@@ -69,7 +69,7 @@ class DES extends Base
     /**
      * Block Length of the cipher
      *
-     * @see \phpseclib\Crypt\Base::block_size
+     * @see \phpseclibcustom\Crypt\Base::block_size
      * @var int
      * @access private
      */
@@ -78,7 +78,7 @@ class DES extends Base
     /**
      * Key Length (in bytes)
      *
-     * @see \phpseclib\Crypt\Base::setKeyLength()
+     * @see \phpseclibcustom\Crypt\Base::setKeyLength()
      * @var int
      * @access private
      */
@@ -87,7 +87,7 @@ class DES extends Base
     /**
      * The mcrypt specific name of the cipher
      *
-     * @see \phpseclib\Crypt\Base::cipher_name_mcrypt
+     * @see \phpseclibcustom\Crypt\Base::cipher_name_mcrypt
      * @var string
      * @access private
      */
@@ -96,7 +96,7 @@ class DES extends Base
     /**
      * The OpenSSL names of the cipher / modes
      *
-     * @see \phpseclib\Crypt\Base::openssl_mode_names
+     * @see \phpseclibcustom\Crypt\Base::openssl_mode_names
      * @var array
      * @access private
      */
@@ -111,7 +111,7 @@ class DES extends Base
     /**
      * Optimizing value while CFB-encrypting
      *
-     * @see \phpseclib\Crypt\Base::cfb_init_len
+     * @see \phpseclibcustom\Crypt\Base::cfb_init_len
      * @var int
      * @access private
      */
@@ -581,9 +581,9 @@ class DES extends Base
     /**
      * Test for engine validity
      *
-     * This is mainly just a wrapper to set things up for \phpseclib\Crypt\Base::isValidEngine()
+     * This is mainly just a wrapper to set things up for \phpseclibcustom\Crypt\Base::isValidEngine()
      *
-     * @see \phpseclib\Crypt\Base::isValidEngine()
+     * @see \phpseclibcustom\Crypt\Base::isValidEngine()
      * @param int $engine
      * @access public
      * @return bool
@@ -617,7 +617,7 @@ class DES extends Base
      *
      * If the key is not explicitly set, it'll be assumed to be all zero's.
      *
-     * @see \phpseclib\Crypt\Base::setKey()
+     * @see \phpseclibcustom\Crypt\Base::setKey()
      * @access public
      * @param string $key
      */
@@ -636,8 +636,8 @@ class DES extends Base
     /**
      * Encrypts a block
      *
-     * @see \phpseclib\Crypt\Base::_encryptBlock()
-     * @see \phpseclib\Crypt\Base::encrypt()
+     * @see \phpseclibcustom\Crypt\Base::_encryptBlock()
+     * @see \phpseclibcustom\Crypt\Base::encrypt()
      * @see self::encrypt()
      * @access private
      * @param string $in
@@ -651,8 +651,8 @@ class DES extends Base
     /**
      * Decrypts a block
      *
-     * @see \phpseclib\Crypt\Base::_decryptBlock()
-     * @see \phpseclib\Crypt\Base::decrypt()
+     * @see \phpseclibcustom\Crypt\Base::_decryptBlock()
+     * @see \phpseclibcustom\Crypt\Base::decrypt()
      * @see self::decrypt()
      * @access private
      * @param string $in
@@ -755,7 +755,7 @@ class DES extends Base
     /**
      * Creates the key schedule
      *
-     * @see \phpseclib\Crypt\Base::_setupKey()
+     * @see \phpseclibcustom\Crypt\Base::_setupKey()
      * @access private
      */
     function _setupKey()
@@ -1290,7 +1290,7 @@ class DES extends Base
     /**
      * Setup the performance-optimized function for de/encrypt()
      *
-     * @see \phpseclib\Crypt\Base::_setupInlineCrypt()
+     * @see \phpseclibcustom\Crypt\Base::_setupInlineCrypt()
      * @access private
      */
     function _setupInlineCrypt()

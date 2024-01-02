@@ -15,10 +15,10 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Net\SFTP;
+namespace phpseclibcustom\Net\SFTP;
 
-use phpseclib\Crypt\RSA;
-use phpseclib\Net\SFTP;
+use phpseclibcustom\Crypt\RSA;
+use phpseclibcustom\Net\SFTP;
 
 /**
  * SFTP Stream Wrapper
@@ -212,7 +212,7 @@ class Stream
                 return false;
             }
 
-            // casting $pass to a string is necessary in the event that it's a \phpseclib\Crypt\RSA object
+            // casting $pass to a string is necessary in the event that it's a \phpseclibcustom\Crypt\RSA object
             if (isset(self::$instances[$host][$port][$user][(string) $pass])) {
                 $this->sftp = self::$instances[$host][$port][$user][(string) $pass];
             } else {
@@ -490,7 +490,7 @@ class Stream
      * Renames a file or directory
      *
      * Attempts to rename oldname to newname, moving it between directories if necessary.
-     * If newname exists, it will be overwritten.  This is a departure from what \phpseclib\Net\SFTP
+     * If newname exists, it will be overwritten.  This is a departure from what \phpseclibcustom\Net\SFTP
      * does.
      *
      * @param string $path_from
@@ -645,7 +645,7 @@ class Stream
     /**
      * Flushes the output
      *
-     * See <http://php.net/fflush>. Always returns true because \phpseclib\Net\SFTP doesn't cache stuff before writing
+     * See <http://php.net/fflush>. Always returns true because \phpseclibcustom\Net\SFTP doesn't cache stuff before writing
      *
      * @return bool
      * @access public
@@ -690,7 +690,7 @@ class Stream
     /**
      * Retrieve information about a file
      *
-     * Ignores the STREAM_URL_STAT_QUIET flag because the entirety of \phpseclib\Net\SFTP\Stream is quiet by default
+     * Ignores the STREAM_URL_STAT_QUIET flag because the entirety of \phpseclibcustom\Net\SFTP\Stream is quiet by default
      * might be worthwhile to reconstruct bits 12-16 (ie. the file type) if mode doesn't have them but we'll
      * cross that bridge when and if it's reached
      *
@@ -737,7 +737,7 @@ class Stream
      * Change stream options
      *
      * STREAM_OPTION_WRITE_BUFFER isn't supported for the same reason stream_flush isn't.
-     * The other two aren't supported because of limitations in \phpseclib\Net\SFTP.
+     * The other two aren't supported because of limitations in \phpseclibcustom\Net\SFTP.
      *
      * @param int $option
      * @param int $arg1

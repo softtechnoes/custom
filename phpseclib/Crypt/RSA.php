@@ -10,7 +10,7 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $rsa = new \phpseclib\Crypt\RSA();
+ *    $rsa = new \phpseclibcustom\Crypt\RSA();
  *    extract($rsa->createKey());
  *
  *    $plaintext = 'terrafrost';
@@ -28,7 +28,7 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $rsa = new \phpseclib\Crypt\RSA();
+ *    $rsa = new \phpseclibcustom\Crypt\RSA();
  *    extract($rsa->createKey());
  *
  *    $plaintext = 'terrafrost';
@@ -49,9 +49,9 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Crypt;
+namespace phpseclibcustom\Crypt;
 
-use phpseclib\Math\BigInteger;
+use phpseclibcustom\Math\BigInteger;
 
 /**
  * Pure-PHP PKCS#1 compliant implementation of RSA.
@@ -119,7 +119,7 @@ class RSA
 
     /**#@+
      * @access private
-     * @see \phpseclib\Crypt\RSA::createKey()
+     * @see \phpseclibcustom\Crypt\RSA::createKey()
     */
     /**
      * ASN1 Integer
@@ -145,7 +145,7 @@ class RSA
 
     /**#@+
      * @access private
-     * @see \phpseclib\Crypt\RSA::__construct()
+     * @see \phpseclibcustom\Crypt\RSA::__construct()
     */
     /**
      * To use the pure-PHP implementation
@@ -161,8 +161,8 @@ class RSA
 
     /**#@+
      * @access public
-     * @see \phpseclib\Crypt\RSA::createKey()
-     * @see \phpseclib\Crypt\RSA::setPrivateKeyFormat()
+     * @see \phpseclibcustom\Crypt\RSA::createKey()
+     * @see \phpseclibcustom\Crypt\RSA::setPrivateKeyFormat()
     */
     /**
      * PKCS#1 formatted private key
@@ -190,13 +190,13 @@ class RSA
 
     /**#@+
      * @access public
-     * @see \phpseclib\Crypt\RSA::createKey()
-     * @see \phpseclib\Crypt\RSA::setPublicKeyFormat()
+     * @see \phpseclibcustom\Crypt\RSA::createKey()
+     * @see \phpseclibcustom\Crypt\RSA::setPublicKeyFormat()
     */
     /**
      * Raw public key
      *
-     * An array containing two \phpseclib\Math\BigInteger objects.
+     * An array containing two \phpseclibcustom\Math\BigInteger objects.
      *
      * The exponent can be indexed with any of the following:
      *
@@ -249,7 +249,7 @@ class RSA
     /**
      * Precomputed Zero
      *
-     * @var \phpseclib\Math\BigInteger
+     * @var \phpseclibcustom\Math\BigInteger
      * @access private
      */
     var $zero;
@@ -257,7 +257,7 @@ class RSA
     /**
      * Precomputed One
      *
-     * @var \phpseclib\Math\BigInteger
+     * @var \phpseclibcustom\Math\BigInteger
      * @access private
      */
     var $one;
@@ -281,7 +281,7 @@ class RSA
     /**
      * Modulus (ie. n)
      *
-     * @var \phpseclib\Math\BigInteger
+     * @var \phpseclibcustom\Math\BigInteger
      * @access private
      */
     var $modulus;
@@ -289,7 +289,7 @@ class RSA
     /**
      * Modulus length
      *
-     * @var \phpseclib\Math\BigInteger
+     * @var \phpseclibcustom\Math\BigInteger
      * @access private
      */
     var $k;
@@ -297,7 +297,7 @@ class RSA
     /**
      * Exponent (ie. e or d)
      *
-     * @var \phpseclib\Math\BigInteger
+     * @var \phpseclibcustom\Math\BigInteger
      * @access private
      */
     var $exponent;
@@ -337,7 +337,7 @@ class RSA
     /**
      * Hash function
      *
-     * @var \phpseclib\Crypt\Hash
+     * @var \phpseclibcustom\Crypt\Hash
      * @access private
      */
     var $hash;
@@ -361,7 +361,7 @@ class RSA
     /**
      * Hash function for the Mask Generation Function
      *
-     * @var \phpseclib\Crypt\Hash
+     * @var \phpseclibcustom\Crypt\Hash
      * @access private
      */
     var $mgfHash;
@@ -452,10 +452,10 @@ class RSA
      * The constructor
      *
      * If you want to make use of the openssl extension, you'll need to set the mode manually, yourself.  The reason
-     * \phpseclib\Crypt\RSA doesn't do it is because OpenSSL doesn't fail gracefully.  openssl_pkey_new(), in particular, requires
+     * \phpseclibcustom\Crypt\RSA doesn't do it is because OpenSSL doesn't fail gracefully.  openssl_pkey_new(), in particular, requires
      * openssl.cnf be present somewhere and, unfortunately, the only real way to find out is too late.
      *
-     * @return \phpseclib\Crypt\RSA
+     * @return \phpseclibcustom\Crypt\RSA
      * @access public
      */
     function __construct()
@@ -532,7 +532,7 @@ class RSA
      *  - 'privatekey': The private key.
      *  - 'publickey':  The public key.
      *  - 'partialkey': A partially computed key (if the execution time exceeded $timeout).
-     *                  Will need to be passed back to \phpseclib\Crypt\RSA::createKey() as the third parameter for further processing.
+     *                  Will need to be passed back to \phpseclibcustom\Crypt\RSA::createKey() as the third parameter for further processing.
      *
      * @access public
      * @param int $bits
@@ -2208,7 +2208,7 @@ class RSA
      */
     function setHash($hash)
     {
-        // \phpseclib\Crypt\Hash supports algorithms that PKCS#1 doesn't support.  md5-96 and sha1-96, for example.
+        // \phpseclibcustom\Crypt\Hash supports algorithms that PKCS#1 doesn't support.  md5-96 and sha1-96, for example.
         switch ($hash) {
             case 'md2':
             case 'md5':
@@ -2237,7 +2237,7 @@ class RSA
      */
     function setMGFHash($hash)
     {
-        // \phpseclib\Crypt\Hash supports algorithms that PKCS#1 doesn't support.  md5-96 and sha1-96, for example.
+        // \phpseclibcustom\Crypt\Hash supports algorithms that PKCS#1 doesn't support.  md5-96 and sha1-96, for example.
         switch ($hash) {
             case 'md2':
             case 'md5':
@@ -2275,7 +2275,7 @@ class RSA
      * See {@link http://tools.ietf.org/html/rfc3447#section-4.1 RFC3447#section-4.1}.
      *
      * @access private
-     * @param \phpseclib\Math\BigInteger $x
+     * @param \phpseclibcustom\Math\BigInteger $x
      * @param int $xLen
      * @return string
      */
@@ -2296,7 +2296,7 @@ class RSA
      *
      * @access private
      * @param int|string|resource $x
-     * @return \phpseclib\Math\BigInteger
+     * @return \phpseclibcustom\Math\BigInteger
      */
     function _os2ip($x)
     {
@@ -2309,8 +2309,8 @@ class RSA
      * See {@link http://tools.ietf.org/html/rfc3447#section-5.1.1 RFC3447#section-5.1.2}.
      *
      * @access private
-     * @param \phpseclib\Math\BigInteger $x
-     * @return \phpseclib\Math\BigInteger
+     * @param \phpseclibcustom\Math\BigInteger $x
+     * @return \phpseclibcustom\Math\BigInteger
      */
     function _exponentiate($x)
     {
@@ -2393,10 +2393,10 @@ class RSA
      * Returns $x->modPow($this->exponents[$i], $this->primes[$i])
      *
      * @access private
-     * @param \phpseclib\Math\BigInteger $x
-     * @param \phpseclib\Math\BigInteger $r
+     * @param \phpseclibcustom\Math\BigInteger $x
+     * @param \phpseclibcustom\Math\BigInteger $r
      * @param int $i
-     * @return \phpseclib\Math\BigInteger
+     * @return \phpseclibcustom\Math\BigInteger
      */
     function _blind($x, $r, $i)
     {
@@ -2449,8 +2449,8 @@ class RSA
      * See {@link http://tools.ietf.org/html/rfc3447#section-5.1.1 RFC3447#section-5.1.1}.
      *
      * @access private
-     * @param \phpseclib\Math\BigInteger $m
-     * @return \phpseclib\Math\BigInteger
+     * @param \phpseclibcustom\Math\BigInteger $m
+     * @return \phpseclibcustom\Math\BigInteger
      */
     function _rsaep($m)
     {
@@ -2467,8 +2467,8 @@ class RSA
      * See {@link http://tools.ietf.org/html/rfc3447#section-5.1.2 RFC3447#section-5.1.2}.
      *
      * @access private
-     * @param \phpseclib\Math\BigInteger $c
-     * @return \phpseclib\Math\BigInteger
+     * @param \phpseclibcustom\Math\BigInteger $c
+     * @return \phpseclibcustom\Math\BigInteger
      */
     function _rsadp($c)
     {
@@ -2485,8 +2485,8 @@ class RSA
      * See {@link http://tools.ietf.org/html/rfc3447#section-5.2.1 RFC3447#section-5.2.1}.
      *
      * @access private
-     * @param \phpseclib\Math\BigInteger $m
-     * @return \phpseclib\Math\BigInteger
+     * @param \phpseclibcustom\Math\BigInteger $m
+     * @return \phpseclibcustom\Math\BigInteger
      */
     function _rsasp1($m)
     {
@@ -2503,8 +2503,8 @@ class RSA
      * See {@link http://tools.ietf.org/html/rfc3447#section-5.2.2 RFC3447#section-5.2.2}.
      *
      * @access private
-     * @param \phpseclib\Math\BigInteger $s
-     * @return \phpseclib\Math\BigInteger
+     * @param \phpseclibcustom\Math\BigInteger $s
+     * @return \phpseclibcustom\Math\BigInteger
      */
     function _rsavp1($s)
     {
@@ -2745,7 +2745,7 @@ class RSA
      * to be 2 regardless of which key is used.  For compatibility purposes, we'll just check to make sure the
      * second byte is 2 or less.  If it is, we'll accept the decrypted string as valid.
      *
-     * As a consequence of this, a private key encrypted ciphertext produced with \phpseclib\Crypt\RSA may not decrypt
+     * As a consequence of this, a private key encrypted ciphertext produced with \phpseclibcustom\Crypt\RSA may not decrypt
      * with a strictly PKCS#1 v1.5 compliant RSA implementation.  Public key encrypted ciphertext's should but
      * not private key encrypted ciphertext's.
      *

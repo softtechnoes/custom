@@ -12,12 +12,12 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\File\ASN1;
+namespace phpseclibcustom\File\ASN1;
 
 /**
  * ASN.1 Element
  *
- * Bypass normal encoding rules in phpseclib\File\ASN1::encodeDER()
+ * Bypass normal encoding rules in phpseclibcustom\File\ASN1::encodeDER()
  *
  * @package ASN1
  * @author  Jim Wigginton <terrafrost@php.net>
@@ -37,7 +37,7 @@ class Element
      * Constructor
      *
      * @param string $encoded
-     * @return \phpseclib\File\ASN1\Element
+     * @return \phpseclibcustom\File\ASN1\Element
      * @access public
      */
     function __construct($encoded)

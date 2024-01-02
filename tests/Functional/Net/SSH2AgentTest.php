@@ -6,8 +6,8 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Net\SSH2;
-use phpseclib\System\SSH\Agent;
+use phpseclibcustom\Net\SSH2;
+use phpseclibcustom\System\SSH\Agent;
 
 class Functional_Net_SSH2AgentTest extends PhpseclibFunctionalTestCase
 {

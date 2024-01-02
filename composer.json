@@ -1,5 +1,5 @@
 {
-    "name": "phpseclib/phpseclib",
+    "name": "currys/phpseclibcustom",
     "type": "library",
     "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
     "keywords": [
@@ -70,7 +70,7 @@
             "phpseclib/bootstrap.php"
         ],
         "psr-4": {
-            "phpseclib\\": "phpseclib/"
+            "phpseclibcustom\\": "phpseclib/"
         }
     }
 }

@@ -5,8 +5,8 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Crypt\RSA;
-use phpseclib\Math\BigInteger;
+use phpseclibcustom\Crypt\RSA;
+use phpseclibcustom\Math\BigInteger;
 
 class Unit_Crypt_RSA_ModeTest extends PhpseclibTestCase
 {

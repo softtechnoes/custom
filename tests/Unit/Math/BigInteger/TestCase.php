@@ -15,7 +15,7 @@ abstract class Unit_Math_BigInteger_TestCase extends PhpseclibTestCase
 
     public function getInstance($x = 0, $base = 10)
     {
-        return new \phpseclib\Math\BigInteger($x, $base);
+        return new \phpseclibcustom\Math\BigInteger($x, $base);
     }
 
     public function testConstructorBase2()
@@ -333,7 +333,7 @@ abstract class Unit_Math_BigInteger_TestCase extends PhpseclibTestCase
     public function testDiffieHellmanKeyAgreement()
     {
         if (getenv('TRAVIS') && PHP_VERSION === '5.3.3'
-            && MATH_BIGINTEGER_MODE === \phpseclib\Math\BigInteger::MODE_INTERNAL
+            && MATH_BIGINTEGER_MODE === \phpseclibcustom\Math\BigInteger::MODE_INTERNAL
         ) {
             $this->markTestIncomplete(
                 'This test hangs on PHP 5.3.3 using internal mode.'

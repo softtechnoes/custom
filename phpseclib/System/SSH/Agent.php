@@ -10,9 +10,9 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $agent = new \phpseclib\System\SSH\Agent();
+ *    $agent = new \phpseclibcustom\System\SSH\Agent();
  *
- *    $ssh = new \phpseclib\Net\SSH2('www.domain.tld');
+ *    $ssh = new \phpseclibcustom\Net\SSH2('www.domain.tld');
  *    if (!$ssh->login('username', $agent)) {
  *        exit('Login Failed');
  *    }
@@ -31,15 +31,15 @@
  * @internal  See http://api.libssh.org/rfc/PROTOCOL.agent
  */
 
-namespace phpseclib\System\SSH;
+namespace phpseclibcustom\System\SSH;
 
-use phpseclib\Crypt\RSA;
-use phpseclib\System\SSH\Agent\Identity;
+use phpseclibcustom\Crypt\RSA;
+use phpseclibcustom\System\SSH\Agent\Identity;
 
 /**
  * Pure-PHP ssh-agent client identity factory
  *
- * requestIdentities() method pumps out \phpseclib\System\SSH\Agent\Identity objects
+ * requestIdentities() method pumps out \phpseclibcustom\System\SSH\Agent\Identity objects
  *
  * @package SSH\Agent
  * @author  Jim Wigginton <terrafrost@php.net>
@@ -114,7 +114,7 @@ class Agent
     /**
      * Default Constructor
      *
-     * @return \phpseclib\System\SSH\Agent
+     * @return \phpseclibcustom\System\SSH\Agent
      * @access public
      */
     function __construct($address = null)
@@ -154,7 +154,7 @@ class Agent
      * Request Identities
      *
      * See "2.5.2 Requesting a list of protocol 2 keys"
-     * Returns an array containing zero or more \phpseclib\System\SSH\Agent\Identity objects
+     * Returns an array containing zero or more \phpseclibcustom\System\SSH\Agent\Identity objects
      *
      * @return array
      * @access public

@@ -97,7 +97,7 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $blowfish = new \phpseclib\Crypt\Blowfish();
+ *    $blowfish = new \phpseclibcustom\Crypt\Blowfish();
  *
  *    $blowfish->setKey('12345678901234567890123456789012');
  *
@@ -116,7 +116,7 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Crypt;
+namespace phpseclibcustom\Crypt;
 
 /**
  * Pure-PHP implementation of Blowfish.
@@ -131,7 +131,7 @@ class Blowfish extends Base
     /**
      * Block Length of the cipher
      *
-     * @see \phpseclib\Crypt\Base::block_size
+     * @see \phpseclibcustom\Crypt\Base::block_size
      * @var int
      * @access private
      */
@@ -140,7 +140,7 @@ class Blowfish extends Base
     /**
      * The mcrypt specific name of the cipher
      *
-     * @see \phpseclib\Crypt\Base::cipher_name_mcrypt
+     * @see \phpseclibcustom\Crypt\Base::cipher_name_mcrypt
      * @var string
      * @access private
      */
@@ -149,7 +149,7 @@ class Blowfish extends Base
     /**
      * Optimizing value while CFB-encrypting
      *
-     * @see \phpseclib\Crypt\Base::cfb_init_len
+     * @see \phpseclibcustom\Crypt\Base::cfb_init_len
      * @var int
      * @access private
      */
@@ -363,7 +363,7 @@ class Blowfish extends Base
     /**
      * The Key Length (in bytes)
      *
-     * @see \phpseclib\Crypt\Base::setKeyLength()
+     * @see \phpseclibcustom\Crypt\Base::setKeyLength()
      * @var int
      * @access private
      * @internal The max value is 256 / 8 = 32, the min value is 128 / 8 = 16.  Exists in conjunction with $Nk
@@ -432,9 +432,9 @@ class Blowfish extends Base
     /**
      * Test for engine validity
      *
-     * This is mainly just a wrapper to set things up for \phpseclib\Crypt\Base::isValidEngine()
+     * This is mainly just a wrapper to set things up for \phpseclibcustom\Crypt\Base::isValidEngine()
      *
-     * @see \phpseclib\Crypt\Base::isValidEngine()
+     * @see \phpseclibcustom\Crypt\Base::isValidEngine()
      * @param int $engine
      * @access public
      * @return bool
@@ -464,7 +464,7 @@ class Blowfish extends Base
     /**
      * Setup the key (expansion)
      *
-     * @see \phpseclib\Crypt\Base::_setupKey()
+     * @see \phpseclibcustom\Crypt\Base::_setupKey()
      * @access private
      */
     function _setupKey()
@@ -878,7 +878,7 @@ class Blowfish extends Base
     /**
      * Setup the performance-optimized function for de/encrypt()
      *
-     * @see \phpseclib\Crypt\Base::_setupInlineCrypt()
+     * @see \phpseclibcustom\Crypt\Base::_setupInlineCrypt()
      * @access private
      */
     function _setupInlineCrypt()

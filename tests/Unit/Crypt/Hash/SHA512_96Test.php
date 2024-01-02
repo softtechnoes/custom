@@ -5,7 +5,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Crypt\Hash;
+use phpseclibcustom\Crypt\Hash;
 
 class Unit_Crypt_Hash_SHA512_96Test extends Unit_Crypt_Hash_SHA512Test
 {

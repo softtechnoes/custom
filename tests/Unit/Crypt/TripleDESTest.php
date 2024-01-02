@@ -5,8 +5,8 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  */
 
-use phpseclib\Crypt\Base;
-use phpseclib\Crypt\TripleDES;
+use phpseclibcustom\Crypt\Base;
+use phpseclibcustom\Crypt\TripleDES;
 
 class Unit_Crypt_TripleDESTest extends PhpseclibTestCase
 {

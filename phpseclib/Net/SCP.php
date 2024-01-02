@@ -12,11 +12,11 @@
  * <?php
  *    include 'vendor/autoload.php';
  *
- *    $ssh = new \phpseclib\Net\SSH2('www.domain.tld');
+ *    $ssh = new \phpseclibcustom\Net\SSH2('www.domain.tld');
  *    if (!$ssh->login('username', 'password')) {
  *        exit('bad login');
  *    }
- *    $scp = new \phpseclib\Net\SCP($ssh);
+ *    $scp = new \phpseclibcustom\Net\SCP($ssh);
  *
  *    $scp->put('abcd', str_repeat('x', 1024*1024));
  * ?>
@@ -30,7 +30,7 @@
  * @link      http://phpseclib.sourceforge.net
  */
 
-namespace phpseclib\Net;
+namespace phpseclibcustom\Net;
 
 /**
  * Pure-PHP implementations of SCP.
@@ -43,7 +43,7 @@ class SCP
 {
     /**#@+
      * @access public
-     * @see \phpseclib\Net\SCP::put()
+     * @see \phpseclibcustom\Net\SCP::put()
      */
     /**
      * Reads data from a local file.
@@ -57,8 +57,8 @@ class SCP
 
     /**#@+
      * @access private
-     * @see \phpseclib\Net\SCP::_send()
-     * @see \phpseclib\Net\SCP::_receive()
+     * @see \phpseclibcustom\Net\SCP::_send()
+     * @see \phpseclibcustom\Net\SCP::_receive()
     */
     /**
      * SSH1 is being used.
@@ -99,8 +99,8 @@ class SCP
      *
      * Connects to an SSH server
      *
-     * @param \phpseclib\Net\SSH1|\phpseclib\Net\SSH2 $ssh
-     * @return \phpseclib\Net\SCP
+     * @param \phpseclibcustom\Net\SSH1|\phpseclibcustom\Net\SSH2 $ssh
+     * @return \phpseclibcustom\Net\SCP
      * @access public
      */
     function __construct($ssh)
@@ -120,8 +120,8 @@ class SCP
     /**
      * Uploads a file to the SCP server.
      *
-     * By default, \phpseclib\Net\SCP::put() does not read from the local filesystem.  $data is dumped directly into $remote_file.
-     * So, for example, if you set $data to 'filename.ext' and then do \phpseclib\Net\SCP::get(), you will get a file, twelve bytes
+     * By default, \phpseclibcustom\Net\SCP::put() does not read from the local filesystem.  $data is dumped directly into $remote_file.
+     * So, for example, if you set $data to 'filename.ext' and then do \phpseclibcustom\Net\SCP::get(), you will get a file, twelve bytes
      * long, containing 'filename.ext' as its contents.
      *
      * Setting $mode to self::SOURCE_LOCAL_FILE will change the above behavior.  With self::SOURCE_LOCAL_FILE, $remote_file will
